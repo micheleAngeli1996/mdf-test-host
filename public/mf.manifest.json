@@ -1,0 +1,4 @@
+{
+	"calendar": "http://localhost:4201/remoteEntry.js",
+	"teams": "http://localhost:4202/remoteEntry.js"
+  }
