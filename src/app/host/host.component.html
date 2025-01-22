@@ -2,12 +2,13 @@
     <p-toolbar [style]="{ 'border-radius': '3rem', 'padding': '1rem 1rem 1rem 1.5rem' }">
         <ng-template #start>
             <div class="flex items-center gap-2">
-                <a routerLink="/calendar" class="p-button font-bold">
-                    Calendar
-                </a>
-                <a routerLink="/teams" class="p-button font-bold">
-                    Teams
-                </a>
+                <!-- Dynamically create menu items for all Micro Frontends -->
+                @for (remote of remotes; track $index) {
+                    <a [routerLink]="remote.routePath" class="p-button font-bold">
+                        {{remote.displayName}}
+                    </a>
+                }
+
             </div>
         </ng-template>
 

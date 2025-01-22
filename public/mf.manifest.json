@@ -1,4 +1,16 @@
 {
-	"calendar": "http://localhost:4201/remoteEntry.js",
-	"teams": "http://localhost:4202/remoteEntry.js"
-  }
+	"calendar": {
+		"remoteEntry": "http://localhost:4201/remoteEntry.js",
+		"exposedModule": "./routes",
+		"displayName": "Calendar Module",
+		"routePath": "calendar",
+		"ngModuleName": "CALENDAR_ROUTES"
+	},
+	"teams": {
+		"remoteEntry": "http://localhost:4202/remoteEntry.js",
+		"exposedModule": "./routes",
+		"displayName": "Teams Module",
+		"routePath": "teams",
+		"ngModuleName": "TEAMS_ROUTES"
+	}
+}
