@@ -7,6 +7,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CustomManifest, CustomRemoteConfig } from '../utils/config';
 import { getManifest } from '@angular-architects/module-federation';
 
+import { TranslateService } from "@ngx-translate/core";
 @Component({
   selector: 'app-host',
   imports: [RouterModule, Toolbar, AvatarModule, ButtonModule],
@@ -16,6 +17,11 @@ import { getManifest } from '@angular-architects/module-federation';
 export class HostComponent {
   remotes: CustomRemoteConfig[] = [];
   router: Router = inject(Router);
+
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['it', 'en']);
+    this.translate.use('it');
+  }
 
   async ngOnInit(): Promise<void> {
     const manifest = getManifest<CustomManifest>();

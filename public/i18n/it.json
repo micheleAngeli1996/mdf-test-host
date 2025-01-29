@@ -1,0 +1,12 @@
+{
+    "teams": {
+        "code": "Codice",
+        "name": "Nome",
+        "category": "Categoria",
+        "quantity": "Quantità"
+    },
+    "calendar": {
+        "hello": "Ciao {{name}}! Sono calendario :)",
+        "remote_calendar": "Calendario remoto"
+    }
+}

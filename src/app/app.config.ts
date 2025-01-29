@@ -7,9 +7,17 @@ import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer, 
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 
+import { provideHttpClient } from "@angular/common/http";
+import { provideTranslateService, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
 import { HOST_ROUTES } from './host.routes';
 import { buildRoutes } from './utils/routes';
 import { CustomManifest } from './utils/config';
+
+const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
+  new TranslateHttpLoader(http, './i18n/', '.json');
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +26,7 @@ export const appConfig: ApplicationConfig = {
       const routes = buildRoutes(manifest);
       inject(Router).resetConfig(routes);
     }),
+    provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     importProvidersFrom(
       BrowserModule,
@@ -32,5 +41,14 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura
       }
-    })],
+    }),
+    provideTranslateService({
+      defaultLanguage: 'it',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpLoaderFactory,
+        deps: [HttpClient],
+      },
+    })
+  ],
 };

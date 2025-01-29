@@ -4,9 +4,9 @@
             <div class="flex items-center gap-2">
                 <!-- Dynamically create menu items for all Micro Frontends -->
                 @for (remote of remotes; track $index) {
-                    <a [routerLink]="remote.routePath" class="p-button font-bold">
-                        {{remote.displayName}}
-                    </a>
+                <a [routerLink]="remote.routePath" class="p-button font-bold">
+                    {{remote.displayName}}
+                </a>
                 }
 
             </div>
