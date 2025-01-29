@@ -6,7 +6,7 @@
         "quantity": "Quantità"
     },
     "calendar": {
-        "hello": "Ciao {{name}}! Sono calendario :)",
+        "hello": "Ciao {{name}}! Sono calendario",
         "remote_calendar": "Calendario remoto"
     }
 }
