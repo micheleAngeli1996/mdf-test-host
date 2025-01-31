@@ -14,11 +14,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { HOST_ROUTES } from './host.routes';
 import { buildRoutes } from './utils/routes';
-import { CustomManifest } from './utils/config';
-
-const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
-  new TranslateHttpLoader(http, './i18n/', '.json');
-
+import { CustomManifest } from './models/config';
+ 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAppInitializer(() => {
@@ -43,12 +40,7 @@ export const appConfig: ApplicationConfig = {
       }
     }),
     provideTranslateService({
-      defaultLanguage: 'it',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
-        deps: [HttpClient],
-      },
+      defaultLanguage: 'it', 
     })
   ],
 };

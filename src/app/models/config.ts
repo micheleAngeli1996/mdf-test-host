@@ -5,6 +5,7 @@ export type CustomRemoteConfig = RemoteConfig & {
     displayName: string;
     routePath: string;
     ngModuleName: string;
+    translateUrl: string;
 };
 
 export type CustomManifest = Manifest<CustomRemoteConfig>;

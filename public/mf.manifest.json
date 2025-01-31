@@ -1,6 +1,7 @@
 {
 	"calendar": {
 		"remoteEntry": "http://localhost:4201/remoteEntry.js",
+		"translateUrl": "http://localhost:4201/i18n",
 		"exposedModule": "./routes",
 		"displayName": "Calendar Module",
 		"routePath": "calendar",
@@ -8,6 +9,7 @@
 	},
 	"teams": {
 		"remoteEntry": "http://localhost:4202/remoteEntry.js",
+		"translateUrl": "http://localhost:4202/i18n",
 		"exposedModule": "./routes",
 		"displayName": "Teams Module",
 		"routePath": "teams",

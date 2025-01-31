@@ -1,7 +1,7 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 
-import { CustomManifest } from './config';
+import { CustomManifest } from '../models/config';
 import { HOST_ROUTES } from '../host.routes';
 
 export function buildRoutes(options: CustomManifest): Routes {
