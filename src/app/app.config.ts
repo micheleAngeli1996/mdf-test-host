@@ -9,13 +9,11 @@ import { providePrimeNG } from 'primeng/config';
 
 import { provideHttpClient } from "@angular/common/http";
 import { provideTranslateService, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
 
 import { HOST_ROUTES } from './host.routes';
 import { buildRoutes } from './utils/routes';
 import { CustomManifest } from './models/config';
- 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAppInitializer(() => {
@@ -39,8 +37,9 @@ export const appConfig: ApplicationConfig = {
         preset: Aura
       }
     }),
+    // Indico solamente la lingua di default: il caricamente lo faccio tramite TranslationMergeService
     provideTranslateService({
-      defaultLanguage: 'it', 
+      defaultLanguage: 'it'
     })
   ],
 };
