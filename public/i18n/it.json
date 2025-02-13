@@ -8,5 +8,8 @@
     "calendar": {
         "hello": "Ciao {{name}}! Sono calendario",
         "remote_calendar": "Calendario remoto"
+    },
+    "gt_device": {
+        "create_device": "Crea dispositivo"
     }
 }

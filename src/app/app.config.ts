@@ -8,7 +8,7 @@ import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 
 import { provideHttpClient } from "@angular/common/http";
-import { provideTranslateService, TranslateLoader } from "@ngx-translate/core";
+import { provideTranslateService } from "@ngx-translate/core";
 
 import { HOST_ROUTES } from './host.routes';
 import { buildRoutes } from './utils/routes';
@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     importProvidersFrom(
       BrowserModule,
-      RouterModule,
+      RouterModule
     ),
     provideRouter(
       HOST_ROUTES,
